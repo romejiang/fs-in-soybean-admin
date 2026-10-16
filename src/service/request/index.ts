@@ -168,3 +168,29 @@ export const demoRequest = createRequest(
     }
   }
 );
+
+/**
+ * Request instance for the local CRUD mock.
+ *
+ * It targets the `/mock` middleware registered by `build/plugins/mock.ts` and unwraps the raw
+ * `{ code, message, data }` body so the fast-crud demo api layer can read `res.data`.
+ */
+export const mockRequest = createRequest(
+  {
+    baseURL: '/mock'
+  },
+  {
+    transform(response: AxiosResponse<App.Service.Response<any>>) {
+      return response.data;
+    },
+    isBackendSuccess(response) {
+      return Number(response.data.code) === 200;
+    },
+    async onBackendFail() {
+      return null;
+    },
+    onError(error) {
+      window.$message?.error(error.message);
+    }
+  }
+);

@@ -225,7 +225,12 @@ const local: App.I18n.Schema = {
     404: '页面不存在',
     500: '服务器错误',
     'iframe-page': '外链页面',
-    home: '首页'
+    home: '首页',
+    crud: 'CRUD 示例',
+    crud_demo: '基本示例',
+    'crud_header-group': '多级表头',
+    crud_doc: 'FastCrud 文档',
+    crud_source: 'FastCrud 源码'
   },
   page: {
     login: {

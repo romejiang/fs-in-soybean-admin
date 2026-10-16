@@ -26,9 +26,18 @@ export function setupElegantRouter() {
 
       const constantRoutes: RouteKey[] = ['login', '403', '404', '500'];
 
+      const extraMeta: Record<string, Partial<RouteMeta>> = {
+        crud: { icon: 'mdi:table-large', order: 2 },
+        crud_demo: { icon: 'mdi:table' },
+        'crud_header-group': { icon: 'mdi:table-multiple' },
+        crud_doc: { icon: 'logos:vue' },
+        crud_source: { icon: 'mdi:github' }
+      };
+
       const meta: Partial<RouteMeta> = {
         title: key,
-        i18nKey: `route.${key}` as App.I18n.I18nKey
+        i18nKey: `route.${key}` as App.I18n.I18nKey,
+        ...extraMeta[key]
       };
 
       if (constantRoutes.includes(key)) {

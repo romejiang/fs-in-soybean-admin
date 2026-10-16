@@ -40,6 +40,59 @@ export const generatedRoutes: GeneratedRoute[] = [
     }
   },
   {
+    name: 'crud',
+    path: '/crud',
+    component: 'layout.base',
+    meta: {
+      title: 'crud',
+      i18nKey: 'route.crud',
+      icon: 'mdi:table-large',
+      order: 2
+    },
+    children: [
+      {
+        name: 'crud_demo',
+        path: '/crud/demo',
+        component: 'view.crud_demo',
+        meta: {
+          title: 'crud_demo',
+          i18nKey: 'route.crud_demo',
+          icon: 'mdi:table'
+        }
+      },
+      {
+        name: 'crud_doc',
+        path: '/crud/doc',
+        component: 'view.crud_doc',
+        meta: {
+          title: 'crud_doc',
+          i18nKey: 'route.crud_doc',
+          icon: 'logos:vue'
+        }
+      },
+      {
+        name: 'crud_header-group',
+        path: '/crud/header-group',
+        component: 'view.crud_header-group',
+        meta: {
+          title: 'crud_header-group',
+          i18nKey: 'route.crud_header-group',
+          icon: 'mdi:table-multiple'
+        }
+      },
+      {
+        name: 'crud_source',
+        path: '/crud/source',
+        component: 'view.crud_source',
+        meta: {
+          title: 'crud_source',
+          i18nKey: 'route.crud_source',
+          icon: 'mdi:github'
+        }
+      }
+    ]
+  },
+  {
     name: 'home',
     path: '/home',
     component: 'layout.base$view.home',

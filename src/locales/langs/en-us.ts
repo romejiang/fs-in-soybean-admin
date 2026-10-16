@@ -229,7 +229,12 @@ const local: App.I18n.Schema = {
     404: 'Page Not Found',
     500: 'Server Error',
     'iframe-page': 'Iframe',
-    home: 'Home'
+    home: 'Home',
+    crud: 'CRUD Demo',
+    crud_demo: 'Basic Demo',
+    'crud_header-group': 'Header Group',
+    crud_doc: 'FastCrud Docs',
+    crud_source: 'FastCrud Source'
   },
   page: {
     login: {
