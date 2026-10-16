@@ -4,3 +4,4 @@ export * from './components';
 export * from './iconify';
 export * from './dayjs';
 export * from './app';
+export * from './fast-crud';

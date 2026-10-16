@@ -6,9 +6,13 @@ import messages from './locale';
 const i18n = createI18n({
   locale: localStg.get('lang') || 'zh-CN',
   fallbackLocale: 'en',
-  messages,
+  // `fs` (fast-crud locale) is only consumed at runtime, hide it from vue-i18n's type inference
+  messages: messages as unknown as Record<App.I18n.LangType, App.I18n.Schema>,
   legacy: false
 });
+
+/** The vue-i18n instance, also consumed by the fast-crud plugin */
+export { i18n };
 
 /**
  * Setup plugin i18n

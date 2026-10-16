@@ -10,8 +10,10 @@ overrides:
 allowBuilds:
   '@antv/util': false
   '@parcel/watcher': false
+  aws-crt: false
   core-js: false
   core-js-pure: false
+  cos-js-sdk-v5: false
   es5-ext: false
   esbuild: false
   simple-git-hooks: false

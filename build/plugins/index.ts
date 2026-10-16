@@ -6,6 +6,7 @@ import vueRootValidator from 'vite-plugin-vue-transition-root-validator';
 import { setupElegantRouter } from './router';
 import { setupDevtoolsPlugin } from './devtools';
 import { setupHtmlPlugin } from './html';
+import { setupMockPlugin } from './mock';
 import { setupUnocss } from './unocss';
 import { setupUnplugin } from './unplugin';
 
@@ -17,6 +18,7 @@ export function setupVitePlugins(viteEnv: Env.ImportMeta, buildTime: string) {
     setupElegantRouter(),
     setupUnocss(viteEnv),
     ...setupUnplugin(viteEnv),
+    setupMockPlugin(),
     progress(),
     setupHtmlPlugin(buildTime),
     vueRootValidator()

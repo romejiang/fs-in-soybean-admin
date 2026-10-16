@@ -3,13 +3,14 @@ import { createApp } from 'vue';
 import {
   setupAppVersionNotification,
   setupDayjs,
+  setupFastCrud,
   setupIconifyOffline,
   setupLoading,
   setupNProgress,
   setupProNaiveComponents
 } from './plugins';
 import './plugins/assets';
-import { getLocale, setupI18n } from './locales';
+import { getLocale, i18n, setupI18n } from './locales';
 import { setupStore } from './store';
 import { setupRouter } from './router';
 import App from './App.vue';
@@ -32,6 +33,8 @@ async function setupApp() {
   setupProNaiveComponents(app);
 
   setupI18n(app);
+
+  setupFastCrud(app, { i18n });
 
   setupAppVersionNotification();
 
